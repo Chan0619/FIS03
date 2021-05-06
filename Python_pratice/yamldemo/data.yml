@@ -1,0 +1,50 @@
+# 列表 ['a e f ', 'b', 'c', 'd', None, '代发']
+#- 'a e f '
+#- b
+#- c
+#- d
+#- ~  # ~代表None
+#- '中文'
+
+# 字典 嵌套列表， 字典嵌套字典
+#languages:
+#  - Ruby
+#  - Perl
+#  - Python
+#websites:
+#  YAML: yaml.org
+#  Ruby: ruby-lang.org
+#  Python: python.org
+#  Perl: use.perl.org
+
+# 列表 嵌套列表， 列表嵌套字典
+# [[1, 2], [3, 4], [5, 6], {'key': 'value'}]
+#- [1,2]  # 流式
+#-
+#  - 3
+#  - 4
+#-
+#  - 5
+#  - 6
+#-
+##  key: 'value'
+#  {'key1': 'value1'}
+
+# 引用
+#- &showell Steve
+#- Clark
+#- Brian
+#- Oren
+#- *showell
+
+#defaults: &defaults
+#  adapter:  postgres
+#  host:     localhost
+#
+#development:
+#  database: myapp_development
+#  <<: *defaults
+#
+#test:
+#  database: myapp_test
+#  <<: *defaults
