@@ -1,6 +1,6 @@
 import pytest
 
-
+# 创建登录的fixture 方法
 # @pytest.fixture(autouse=True)  # 默认为False，不推荐使用
 @pytest.fixture()
 def login():
@@ -18,6 +18,7 @@ def login():
 # 提前登录
 # def test_case1(login):
 def test_case1(connectdB):
+    # 通过fixture方法的名称，相当于调用了这个方法，可以拿到返回的值
     print(f'login information: {login}')
     print('测试用例1')
 

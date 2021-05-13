@@ -32,12 +32,10 @@ def func():
 
 
 class TestCalc():
-
     def setup_class(self):
         print('开始计算')
         # 实例化计算器类
         self.calc = Calculator()
-
     def teardown_class(self):
         print('计算结束')
 
