@@ -4,7 +4,8 @@
 #     yield
 #     print('断开数据库连接')
 
-class TestDemo():
+
+class TestDemo:
 
     def test_a(self, connectdB):
         print('测试用例a')

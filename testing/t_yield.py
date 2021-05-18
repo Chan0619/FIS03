@@ -10,7 +10,7 @@ def provider():
 
 p = provider()
 # 打印的对象类型就是生成器 generator
-# 在生成器中想拿到里面的内容，使用必须调用next()方法
+# 在生成器中想拿到里面的内容，必须调用next()方法
 # print(p)
 # print(next(p))
 # print(next(p))

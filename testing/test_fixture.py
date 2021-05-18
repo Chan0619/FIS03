@@ -1,5 +1,6 @@
 import pytest
 
+
 # 创建登录的fixture 方法
 # @pytest.fixture(autouse=True)  # 默认为False，不推荐使用
 @pytest.fixture()
