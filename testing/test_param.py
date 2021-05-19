@@ -9,5 +9,5 @@ def login1(request):
 
 
 def test_case1(login1):
-    print(login1)
+    print(login1[0])
     print('测试用例1')

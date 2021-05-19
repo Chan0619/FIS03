@@ -4,10 +4,12 @@ import os
 
 from python_pytest.calc import Calculator
 
+# 要使用绝对路径打开yaml文件，conftest.py文件所在包中的所有文件和包都会执行pytest.py文件
+# os.path.dirname(__file__)获取当前文件conftest.py所在的路径
 yaml_file_path = os.path.dirname(__file__) + '/datas/calc.yaml'
 print(yaml_file_path)
 
-with open(yaml_file_path) as f:
+with open(yaml_file_path, encoding='utf-8') as f:
     datas = yaml.safe_load(f)['add']
     add_datas = datas['datas']
     print(add_datas)
@@ -15,6 +17,7 @@ with open(yaml_file_path) as f:
     print(myid)
 
 
+# 获取数据的方法
 @pytest.fixture(params=add_datas, ids=myid)
 def get_add_datas(request):
     print('开始计算')

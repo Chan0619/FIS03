@@ -35,6 +35,7 @@ class TestCalc():
     #     print('计算结束')
 
     # @pytest.mark.parametrize('a, b, expect', add_datas, ids=myid)
+    @pytest.mark.add
     def test_add(self, get_calc, get_add_datas):
         result = None
         try:
@@ -51,10 +52,14 @@ class TestCalc():
         # 得到结果之后，要有断言
         assert result == get_add_datas[2]
 
+    @pytest.mark.add
     def test_add2(self, get_calc):
         result = get_calc.add(0.1, 0.2)
         assert round(result, 2) == 0.3
 
+    @pytest.mark.div
+    def test_div(self):
+        print('test_div')
     # def test_add1(self):
     #     # 实例化计算器类
     #     # calc = Calculator()
