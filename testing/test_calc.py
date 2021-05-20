@@ -1,3 +1,4 @@
+import allure
 import yaml
 import pytest
 from python_pytest.calc import Calculator
@@ -25,7 +26,7 @@ from python_pytest.calc import Calculator
 #     yield data
 #     print('结束计算')
 
-
+@allure.feature('测试计算器')
 class TestCalc():
     # def setup_class(self):
     #     print('开始计算')
@@ -36,13 +37,15 @@ class TestCalc():
 
     # @pytest.mark.parametrize('a, b, expect', add_datas, ids=myid)
     @pytest.mark.add
+    @allure.story('测试加法')
     def test_add(self, get_calc, get_add_datas):
         result = None
         try:
             # 实例化计算器类
             # calc = Calculator()
             # 调用 add 方法
-            result = get_calc.add(get_add_datas[0], get_add_datas[1])
+            with allure.step('计算两个数的相加和'):
+                result = get_calc.add(get_add_datas[0], get_add_datas[1])
             # 判断result是浮点数，并处理
             if isinstance(result, float):
                 result = round(result, 2)
